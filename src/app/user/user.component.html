@@ -1,0 +1,37 @@
+<!--formulaire nom d'utilisateur/email/mot de passe/rue/code postal/ville-->
+<form [formGroup]='userForm' (ngSubmit)="onSubmit()">
+    <div>
+        <label>
+            Nom d'utilisateur :
+            <input type="text" formControlName="nomUtilisateur">
+        </label>
+    
+    <!--Ajout d'un Formgroupe credentials-->   
+    <div formControlName="credentials"> 
+        <label>
+            Email :
+            <input type="email" formControlName="email">
+        </label>
+        <label>
+            Mot de passe :
+            <input type="password" formControlName="motDePasse">
+        </label>
+    </div>
+    
+        <label>
+            Adresse - rue :
+            <input type="text" formControlName="rue">
+        </label>
+        <label>
+            Adresse - code postal :
+            <input type="number" formControlName="codePostal">
+        </label>
+        <label>
+            Adresse - Ville :
+            <input type="text" formControlName="ville">
+        </label>
+        
+        <button type="submit" [disabled]="!userForm.valid">INSCRIPTION</button>
+    </div>
+    </form>
+    
